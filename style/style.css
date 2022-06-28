@@ -7,6 +7,7 @@
 body{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 62.5%;
+	font-size: 0.7em;
 }
 
 h1,h2{
@@ -19,17 +20,20 @@ h1,h2{
 
 a{
 	text-decoration: none;
+	position: relative;
 }
 
-		main section div{
-			background-color: #b388eb;
-		}
-			main section div a{
-				font-size: 2em;
-				font-weight: 700;
-				color: #fff;
-				font-family: 'DM Serif Display', serif;	
-			}
+
+	main section div{
+		background-color: #b388eb;
+	}
+	main section div a{
+		font-size: 2em;
+		font-weight: 700;
+		color: #fff;
+		font-family: 'DM Serif Display', serif;	
+	}
+
 
 ::placeholder{
 	color: #FFF;
@@ -43,9 +47,16 @@ input{
 
 input[type=submit]{
 	border: none;
-	background-color: #8093f1;
 	font-weight: 700;
-	color: #fff;
+	color: #8093F1;
+	transition: all .2s ease;
+	border: 3px solid #8093F1;
+	background-color : transparent;
+}
+
+input[type=submit]:hover{
+	color: #FFF;
+    background-color: #8093F1;
 }
 
 textarea{
@@ -70,6 +81,66 @@ select{
 	#nav-logo{
 		width: 30vh;
 	}
+
+
+	/*=============== ANIMATIONS ===============*/
+
+.text-focus-in{
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}			
+
+
+@-webkit-keyframes text-focus-in {
+  0%{
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100%{
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.button_slide {
+	width: 100%;
+  color: #FFF;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #5A72ED;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_down:hover {
+  box-shadow: inset 0 100px 0 0 #5A72ED;
+}
+
+.zoomimg article img {
+	width: 300px;
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.zoomimg article:hover img {
+	width: 350px;
+}
+
 
 	/*=============== INDEX ===============*/
 
@@ -125,8 +196,27 @@ select{
 		
 						#menu li a{
 							color: #FFF;
+							padding: 0.2em;
 						}
 
+						#menu li a::before {
+						  content: '';
+						  position: absolute;
+						  width: 100%;
+						  height: 4px;
+						  border-radius: 4px;
+						  background-color: #FFF;
+						  bottom: 0;
+						  left: 0;
+						  transform-origin: right;
+						  transform: scaleX(0);
+						  transition: transform .3s ease-in-out;
+						}
+
+						#menu li a:hover::before {
+						  transform-origin: left;
+						  transform: scaleX(1);
+						}						
 	
 		.hero-border{
 			border: solid .2em #fff;
@@ -163,7 +253,6 @@ select{
 			padding: 1em;
 			border-radius: 5em;
 		}
-
 
 	#index-products{
 		margin: 2em;
@@ -203,7 +292,6 @@ select{
 						padding: 2em;
 						margin: 2.5em;
 					}
-
 
 		#products-section-2{
 			margin-bottom: 2em;				
@@ -304,7 +392,6 @@ select{
 			}
 
 			#footer-menu ul li a{
-				padding-bottom: .2em;
 				color: #000000;
 			}			
 
@@ -322,8 +409,8 @@ select{
 			display: flex;
 			flex-flow: wrap row;
 			align-content: center;
-	    justify-content: space-between;
-	    align-items: center;
+		    justify-content: space-between;
+		    align-items: center;
 	  }
 
 			#index-products	div{
@@ -422,7 +509,26 @@ select{
 
 				#menu-views a{
 					color: #FFF;
+					padding: 0.2em;
 				}
+					#menu-views li a::before {
+					  content: '';
+					  position: absolute;
+					  width: 100%;
+					  height: 4px;
+					  border-radius: 4px;
+					  background-color: #FFF;
+					  bottom: 0;
+					  left: 0;
+					  transform-origin: right;
+					  transform: scaleX(0);
+					  transition: transform .3s ease-in-out;
+					}
+
+					#menu-views li a:hover::before {
+					  transform-origin: left;
+					  transform: scaleX(1);
+					}				
 
 
 	/*=============== TIENDA ===============*/
