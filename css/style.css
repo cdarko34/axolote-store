@@ -135,6 +135,31 @@ select{
   }
 }
 
+.button_slide {
+	width: 100%;
+  color: #FFF;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #5A72ED;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_down:hover {
+  box-shadow: inset 0 100px 0 0 #5A72ED;
+}
+
+.zoomimg article img {
+	width: 300px;
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.zoomimg article:hover img {
+	width: 350px;
+}
+
 
 
 	/*=============== INDEX ===============*/	
@@ -168,11 +193,67 @@ select{
 		font-size: 1.5em;	
 	}
 
-	h2{
-	font-size: 2em;
-	}
-
-	#productos-index{
+	#productos-index a{
+		font-size: 1.2em;
 		
 	}
 }
+
+@media (min-width: 768px){
+	#index-hero{
+		  min-height: 50vh;
+
+	}	
+}
+
+@media (min-width: 1024px){
+
+	h2{
+		font-size: 1.7em;
+	}
+
+	#menu a{
+		font-size: 1em;	
+	}	
+
+}
+
+
+
+
+	/*=============== NAV VIEWS ===============*/
+
+#views-nav{
+	background-color: #8093f1;
+}
+
+
+	/*=============== VIEWS ASSETS ===============*/
+
+#formularios form div input{
+	border: none;
+	background-color: #A3ADF5;
+	padding: 0.5em;
+	font-size: 1em;
+}
+
+	/*=============== TIENDA ===============*/
+
+#divider-border{
+	border-bottom: .1em solid #A3ADF5;
+}
+
+	/*=============== MEDIA QUERIES TIENDA ===============*/
+
+@media (min-width: 768px){
+
+	#divider-border{
+		border-right: .1em solid #A3ADF5;
+		border-bottom: none;
+	}
+
+	h2{
+		font-size: 2em;
+	}
+
+}	
